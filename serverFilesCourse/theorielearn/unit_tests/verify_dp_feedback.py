@@ -73,7 +73,7 @@ class VerifyArbitraryIndexArray:
             x.set_bounds((0, 1), (0, 1))
             y = x[0]
         assert "Your code attempted to access x[0], but x is 2-D." in str(excinfo.value)
-        assert y == None
+        assert y is None
 
         with pytest.raises(DPCodingException) as excinfo:
             x.set_bounds((0, 1))
@@ -90,7 +90,7 @@ class VerifyArbitraryIndexArray:
             "Your code attempted to access x[3], but you set your array bounds as x[(1, 2)]."
             in str(excinfo.value)
         )
-        assert y == None
+        assert y is None
 
         with pytest.raises(DPCodingException) as excinfo:
             x.set_bounds((1, 2), (3, 5))
@@ -120,7 +120,7 @@ class VerifyArbitraryIndexArray:
             "Your code tried to access x[0], but this has not yet been evaluated yet."
             in str(excinfo.value)
         )
-        assert y == None
+        assert y is None
 
         # test correct
         x = ArbitraryIndexArray(filled_arr=filled)

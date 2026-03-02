@@ -1,8 +1,8 @@
-from collections import namedtuple
+import unittest
 from types import ModuleType
 from typing import Any
+
 import prairielearn as pl
-import unittest
 
 class PLTestCase(unittest.TestCase):
     include_plt: bool

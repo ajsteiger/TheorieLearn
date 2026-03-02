@@ -1,5 +1,3 @@
-from typing import Any, Dict
-
 import prairielearn as pl
 from theorielearn.shared_utils import grade_question_tokenized
 

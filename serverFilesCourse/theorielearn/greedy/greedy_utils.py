@@ -32,10 +32,10 @@ def get_advertisers(
 
     X: List[float] = [0.0 for _ in range(n)]
     time_remaining = W
-    for l, p, i in combined:
+    for el, p, i in combined:
         if isclose(time_remaining, 0):
             break
-        minutes = min(l, time_remaining)
+        minutes = min(el, time_remaining)
         X[i] = minutes
         time_remaining -= minutes
     return X

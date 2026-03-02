@@ -1,4 +1,4 @@
-from typing import Any, Dict, Optional
+from typing import Optional
 
 import prairielearn as pl
 from theorielearn.shared_utils import set_holistic_feedback

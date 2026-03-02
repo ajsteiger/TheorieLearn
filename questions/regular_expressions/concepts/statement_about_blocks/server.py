@@ -1,4 +1,4 @@
-from typing import Any, Dict, List, Optional, Tuple
+from typing import List, Optional, Tuple
 
 import prairielearn as pl
 from theorielearn.scaffolded_writing.cfg import ScaffoldedWritingCFG

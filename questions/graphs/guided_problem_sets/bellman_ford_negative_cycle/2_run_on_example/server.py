@@ -1,6 +1,6 @@
 import math
 import random
-from typing import Any, Dict, List, Optional, Set, Tuple
+from typing import List, Optional, Set, Tuple
 
 import networkx as nx
 import prairielearn as pl
@@ -84,7 +84,8 @@ def generate(data: pl.QuestionData) -> None:
 def grade_negative_cycle_detection(data: pl.QuestionData) -> None:
     G = nx.node_link_graph(data["params"]["graph"], edges="links")
 
-    transform_cycle = lambda x: [int(node) for node in x.split(",")]
+    def transform_cycle(x: str):
+        return [int(node) for node in x.split(",")]
 
     def grade_cycle_question(cycle: List[int]) -> Tuple[bool, Optional[str]]:
         try:

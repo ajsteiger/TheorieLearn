@@ -1,12 +1,12 @@
+import re
 from enum import Enum
 from typing import List, Optional, Tuple
 
 import chevron
-import re
 import prairielearn as pl
-from theorielearn.shared_utils import QuestionData, grade_question_tokenized
 from sympy import Function, latex, log, symbols, sympify
 from sympy.core.expr import Expr
+from theorielearn.shared_utils import QuestionData, grade_question_tokenized
 
 
 class SequenceType(Enum):
@@ -84,7 +84,7 @@ def populate_data_dictionary_two_term_geometric(
         raise ValueError("B must be strictly greater than D.")
     T = Function("T")
     # comment explain
-    n, l = symbols("n l")
+    n, l = symbols("n l")  # noqa: E741
     data["params"]["recursive_terms"] = latex(A * T(n / B) + C * T(n / D))
     data["params"]["big_O_term"] = latex(n**E)
     W0 = n**E

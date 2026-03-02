@@ -4,7 +4,6 @@ from enum import Enum
 from typing import Any, Dict, List, NamedTuple, Optional, Tuple
 
 import numpy as np
-
 from theorielearn.dynamic_programming.arbitrary_index_array import ElementT
 from theorielearn.dynamic_programming.memo_array import MemoArray
 
@@ -184,7 +183,7 @@ def generate_student_feedback(
             )
 
     points_earned += (
-        np.array([has_wrong_bounds, has_uninit_vals, has_wrong_vals]) == False
+        ~np.array([has_wrong_bounds, has_uninit_vals, has_wrong_vals])
     ).sum()
     return StudentFeedback(feedback=feedback, grade=points_earned / points_possible)
 

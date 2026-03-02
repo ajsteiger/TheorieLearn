@@ -1,5 +1,5 @@
 import re
-from typing import Any, Dict, Optional, Tuple
+from typing import Optional, Tuple
 
 import prairielearn as pl
 import theorielearn.shared_utils as su
@@ -16,10 +16,12 @@ def generate(data: pl.QuestionData) -> None:
 
 
 def grade(data: pl.QuestionData) -> None:
-    invalid_input = lambda st: (not bool(re.fullmatch("[01]+", st))) and st not in {
-        "none",
-        "e",
-    }
+    def invalid_input(st: str):
+        return (not bool(re.fullmatch("[01]+", st))) and st not in {
+            "none",
+            "e",
+        }
+
     target_substring = "0100"
 
     def grade_notinl(student_ans: str) -> Tuple[bool, Optional[str]]:

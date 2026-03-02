@@ -2,13 +2,11 @@ import random
 from enum import IntEnum
 
 import theorielearn.shared_utils as su
-from automata.fa.dfa import DFA
 from theorielearn.automata_utils.fa_utils import (
-    generate_random_dfa,
     generate_dfa_html_description,
+    generate_random_dfa,
 )
 from typing_extensions import assert_never
-
 
 ATTEMPTS = 100
 

@@ -55,17 +55,17 @@ class Divide(postfix.InfixOperator[int]):
 
 @pytest.fixture
 def arithmetic_lexer() -> Lexer[int]:
-    l: Lexer[int] = Lexer()
+    lex: Lexer[int] = Lexer()
 
-    l.register_token(postfix.LeftParen, r"\(")
-    l.register_token(postfix.RightParen, r"\)")
-    l.register_token(Integer, r"[0-9]+")
-    l.register_token(Add, r"\+")
-    l.register_token(Minus, r"-")
-    l.register_token(Mult, r"\*")
-    l.register_token(Divide, r"/")
+    lex.register_token(postfix.LeftParen, r"\(")
+    lex.register_token(postfix.RightParen, r"\)")
+    lex.register_token(Integer, r"[0-9]+")
+    lex.register_token(Add, r"\+")
+    lex.register_token(Minus, r"-")
+    lex.register_token(Mult, r"\*")
+    lex.register_token(Divide, r"/")
 
-    return l
+    return lex
 
 
 def verify_nested_parenthesized_expression() -> None:

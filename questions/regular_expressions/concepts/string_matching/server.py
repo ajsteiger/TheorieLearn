@@ -52,7 +52,8 @@ def generate(data: QuestionData) -> None:
 
 
 def grade(data: QuestionData) -> None:
-    invalid_input = lambda st: (not bool(re.fullmatch("[01]+", st)))
+    def invalid_input(st: str):
+        return not bool(re.fullmatch("[01]+", st))
 
     x1 = data["submitted_answers"]["x1"]
     y1 = data["submitted_answers"]["y1"]

@@ -3,9 +3,8 @@ import random
 import chevron
 import prairielearn as pl
 import sympy
-from theorielearn.shared_utils import QuestionData
-
 from theorielearn.recurrence_equations.utils import gen_for, gen_line
+from theorielearn.shared_utils import QuestionData
 
 
 # Note - if more than one option for the type of for loop is "True", one will be chosen at random from the options
@@ -23,7 +22,7 @@ def generate_recurrence(
 ) -> None:
     n = sympy.symbols("n")
     T = sympy.Function("T")
-    O = sympy.Function("O")
+    O = sympy.Function("O")  # noqa: E741
 
     non_standard_log = False  # A log loop like i < n**2 or i *= 4 will be created.
     # Capability for this is in the code but I'm not 100% Confident the answers are correct. The

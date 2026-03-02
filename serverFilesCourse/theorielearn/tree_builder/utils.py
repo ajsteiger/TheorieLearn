@@ -424,17 +424,17 @@ class TreeBuilderNode(Generic[T]):
         if self.left is None and self.right is None:
             return False, []
         if self.left is not None:
-            b, l = self.left.get_node_neighbors(value)
+            b, ls = self.left.get_node_neighbors(value)
             if b:
                 if self.left.value == value:
-                    l.append(self.value)
-                return b, l
+                    ls.append(self.value)
+                return b, ls
         if self.right is not None:
-            b, l = self.right.get_node_neighbors(value)
+            b, ls = self.right.get_node_neighbors(value)
             if b:
                 if self.right.value == value:
-                    l.append(self.value)
-                return b, l
+                    ls.append(self.value)
+                return b, ls
         return False, []
 
     def get_node_descendants(self, value: T, found=False) -> list[T]:
@@ -475,13 +475,13 @@ class TreeBuilderNode(Generic[T]):
         internals = [] if is_root else [self.value]
         leaves = []
         if self.right is not None:
-            l, i = self.right.get_leaves_internals(False)
+            ls, i = self.right.get_leaves_internals(False)
             internals += i
-            leaves += l
+            leaves += ls
         if self.left is not None:
-            l, i = self.left.get_leaves_internals(False)
+            ls, i = self.left.get_leaves_internals(False)
             internals += i
-            leaves += l
+            leaves += ls
         return leaves, internals
 
     def get_random_leaf(self) -> T:

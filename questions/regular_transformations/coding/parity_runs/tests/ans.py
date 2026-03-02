@@ -14,7 +14,7 @@ def transform(M: DFA) -> DFA:
             for p in parities:
                 for nextchar in input_symbols:
                     nextcharint = int(nextchar)
-                    if c == None:
+                    if c is None:
                         transitions[(q, c, p)][nextchar] = (q, nextcharint, 1)
                     elif c == nextcharint:
                         transitions[(q, c, p)][nextchar] = (q, nextcharint, 1 - p)
@@ -28,8 +28,8 @@ def transform(M: DFA) -> DFA:
     initial_state = (M.initial_state, None, 0)
     final_states = set()
     for q, c, p in states:
-        if (c == None and q in M.final_states) or (
-            c != None and M.transitions[q][str(p)] in M.final_states
+        if (c is None and q in M.final_states) or (
+            c is not None and M.transitions[q][str(p)] in M.final_states
         ):
             final_states.add((q, c, p))
 

@@ -1,4 +1,4 @@
-from typing import Any, Dict, Optional, Tuple
+from typing import Optional, Tuple
 
 import prairielearn as pl
 from theorielearn.shared_utils import grade_question_parameterized, is_perfect_power

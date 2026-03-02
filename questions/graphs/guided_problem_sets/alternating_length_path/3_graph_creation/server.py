@@ -1,4 +1,3 @@
-import json
 import networkx as nx
 from theorielearn.graph_construction import server_base
 from theorielearn.graph_construction.server_base import GraphConstructionRow, StrEdge

@@ -198,7 +198,7 @@ def genStrings(reg):
         # explore neighbors
         for neighbor in G.neighbors(curr):
             edge = G.edges[curr, neighbor].get("label", None)
-            if edge != "\u03b5" and type(edge) == str:
+            if edge != "\u03b5" and type(edge) is str:
                 queue.append((neighbor, built + edge))
             else:
                 queue.append((neighbor, built))
