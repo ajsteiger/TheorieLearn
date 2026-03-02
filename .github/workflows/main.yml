@@ -1,0 +1,24 @@
+name: Ruff Check
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch: # Allows you to run the workflow manually from the Actions tab
+
+jobs:
+  ruff:
+    name: Lint with Ruff
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run Ruff check
+        uses: astral-sh/ruff-action@v3
+        with:
+          # This runs `ruff check .` on your whole repository.
+          args: "check ."
